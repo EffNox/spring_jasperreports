@@ -1,0 +1,21 @@
+spring:
+  application.name: MS-REPORST
+  main.banner-mode: off
+  data.mongodb.uri: mongodb://localhost:27017/ms-reporst
+  data.rest.return-body-on-create: true
+  web.locale: es_ES_#Latn
+server:
+  server-header: ${spring.application.name}
+  port: ${PORT:${SERVER_PORT:8080}}
+  compression.enabled: true
+  error:
+    whitelabel.enabled: false
+    path: /disabled
+    include-message: always
+    include-binding-errors: always # para spring-starter-validators @Valid
+logging.level:
+  '[org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]': off
+  '[org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext]': off
+  '[org.apache.catalina]': off
+  '[org.springframework.boot.devtools]': off
+  '[nr]': info
